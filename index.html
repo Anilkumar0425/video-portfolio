@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Anil Kumar — video editor creating cinematic stories, creative edits and short-form content.">
 <title>Anil Kumar | Video Editor</title>
-
 <style>
 :root{
     --bg:#080a08;
@@ -40,7 +39,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:25px 0
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:#11150a;padding:14px 19px;border-radius:4px;font-weight:800;font-size:.9rem}
 .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}
 
-/* Visual Artwork */
+/* Decorative hero artwork */
 .visual{min-height:410px;position:relative;overflow:hidden;border:1px solid #343b2d;background:radial-gradient(ellipse at 70% 20%,#40512a 0%,transparent 36%),linear-gradient(145deg,#202b1b,#0b0e0b 60%);display:flex;align-items:flex-end;padding:25px}
 .visual:before{content:"";position:absolute;width:290px;height:440px;right:15%;top:4%;background:linear-gradient(130deg,transparent 0 24%,#c8ff2e 24% 29%,#718d27 29% 33%,transparent 33% 100%);transform:rotate(17deg);opacity:.75}
 .visual:after{content:"";position:absolute;width:210px;height:270px;right:22%;bottom:0;background:linear-gradient(90deg,#060806,#1a2115 50%,#050605);clip-path:polygon(35% 0,63% 0,78% 30%,100% 100%,0 100%,20% 30%);opacity:.95}
@@ -51,7 +50,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:25px 0
 /* Marquee */
 .marquee{border-block:1px solid var(--line);padding:17px 0;color:var(--lime);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;display:flex;justify-content:space-around;gap:20px;flex-wrap:wrap}
 
-/* Sections and Projects */
+/* Projects */
 section{padding:82px 0}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
 .section-head h2{font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.06em;margin:12px 0 0}
@@ -64,21 +63,17 @@ section{padding:82px 0}
 .project-info p{margin:6px 0 0;color:var(--muted);font-size:.84rem}
 .num{color:var(--lime);font-size:.8rem}
 
-/* Cover images and responsive YouTube players */
+/* Cover image with YouTube player */
 .video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
 .project-video{position:absolute;inset:0;width:100%;height:100%;display:block;border:0;background:#000}
-.video-cover{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}
-.video-cover img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.video-cover{position:absolute;z-index:2;inset:0;width:100%;height:100%;padding:0;border:0;background:#111;cursor:pointer;overflow:hidden}
+.video-cover img{display:block;width:100%;height:100%;object-fit:cover}
 .video-cover:hover img{transform:scale(1.035)}
 .video-cover:focus-visible{outline:3px solid var(--lime);outline-offset:-5px}
-.play-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:52px;border-radius:14px;background:#080a08d9;border:1px solid var(--lime);color:var(--lime);display:grid;place-items:center;font-size:24px;padding-left:4px}
+.play-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:54px;border-radius:14px;background:#080a08e8;border:2px solid var(--lime);color:var(--lime);display:grid;place-items:center;font-size:25px;padding-left:4px}
+.project-featured{grid-column:span 2}
 
-/* Fifth project spans two columns on desktop */
-@media(min-width:761px){
-    .project-featured{grid-column:span 2}
-}
-
-/* About Section */
+/* About */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .about-grid h2{font-size:clamp(2.2rem,4.5vw,4rem);line-height:1;letter-spacing:-.065em;margin:16px 0}
 .about-grid p{color:var(--muted);line-height:1.8}
@@ -103,6 +98,7 @@ section{padding:82px 0}
 .contact .btn.secondary{border-color:#384032;color:var(--text)}
 .contact .btn.secondary:hover{border-color:var(--lime);color:var(--lime)}
 
+/* Footer */
 footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:var(--muted);font-size:.8rem}
 .foot-logo{color:var(--text);font-weight:900}
 .foot-logo span{color:var(--lime)}
@@ -114,6 +110,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
     .hero{grid-template-columns:1fr;padding:50px 0;gap:28px}
     .visual{min-height:340px}
     .projects{grid-template-columns:1fr}
+    .project-featured{grid-column:auto}
     .about-grid{grid-template-columns:1fr;gap:15px}
     .services{grid-template-columns:repeat(2,1fr)}
     .section-head{align-items:start;flex-direction:column}
@@ -175,7 +172,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
             <div class="eyebrow">Selected projects</div>
             <h2>RECENT WORK<span style="color:var(--lime)">.</span></h2>
         </div>
-        <p>A preview of the visual styles I love creating. Click play to watch the edit.</p>
+        <p>A preview of the visual styles I love creating. Click a cover to play the edit.</p>
     </div>
 
     <div class="projects">
@@ -187,10 +184,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
                 </button>
                 <iframe class="project-video" title="Cinematic Edit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="project-info">
-                <div><h3>Cinematic Edit</h3><p>Cinematic edit · Storytelling</p></div>
-                <span class="num">01 ↗</span>
-            </div>
+            <div class="project-info"><div><h3>Cinematic Edit</h3><p>Cinematic edit · Storytelling</p></div><span class="num">01 ↗</span></div>
         </article>
 
         <article class="project">
@@ -201,10 +195,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
                 </button>
                 <iframe class="project-video" title="Creative Vision" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="project-info">
-                <div><h3>Creative Vision</h3><p>Creative edit · Visual effects</p></div>
-                <span class="num">02 ↗</span>
-            </div>
+            <div class="project-info"><div><h3>Creative Vision</h3><p>Creative edit · Visual effects</p></div><span class="num">02 ↗</span></div>
         </article>
 
         <article class="project">
@@ -215,10 +206,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
                 </button>
                 <iframe class="project-video" title="Short-form Stories" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="project-info">
-                <div><h3>Short-form Stories</h3><p>Instagram Reels · Motion design</p></div>
-                <span class="num">03 ↗</span>
-            </div>
+            <div class="project-info"><div><h3>Short-form Stories</h3><p>Instagram Reels · Motion design</p></div><span class="num">03 ↗</span></div>
         </article>
 
         <article class="project">
@@ -229,10 +217,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
                 </button>
                 <iframe class="project-video" title="Beyond the Imagination" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="project-info">
-                <div><h3>Beyond the Imagination</h3><p>Surreal VFX · Epic visual storytelling</p></div>
-                <span class="num">04 ↗</span>
-            </div>
+            <div class="project-info"><div><h3>Beyond the Imagination</h3><p>Surreal VFX · Epic visual storytelling</p></div><span class="num">04 ↗</span></div>
         </article>
 
         <article class="project project-featured">
@@ -243,10 +228,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
                 </button>
                 <iframe class="project-video" title="Typography" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="project-info">
-                <div><h3>Typography</h3><p>Motion graphics · 3D kinetic design</p></div>
-                <span class="num">05 ↗</span>
-            </div>
+            <div class="project-info"><div><h3>Typography</h3><p>Motion graphics · 3D kinetic design</p></div><span class="num">05 ↗</span></div>
         </article>
     </div>
 </section>
@@ -258,8 +240,8 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
             <h2>MADE WITH<br>INTENTION.<br><span style="color:var(--lime)">CUT WITH FEELING.</span></h2>
         </div>
         <div>
-            <p>I’m  ANIL KUMAR BUDIGE a video editor building my creative identity. I edit one project at a time. I enjoy finding the story inside the footage — then shaping it with timing, sound, color, and transitions.</p>
-            <p>My current toolkit includes Adobe Premiere Pro,Capcut mobile with a focus on cinematic edits, creative short-form content, and visual storytelling.</p>
+            <p>I’m Anil Kumar, a video editor building my creative identity one project at a time. I enjoy finding the story inside the footage — then shaping it with timing, sound, color, and transitions.</p>
+            <p>My current toolkit includes Adobe Premiere Pro, with a focus on cinematic edits, creative short-form content, and visual storytelling.</p>
             <div class="stat-row">
                 <div class="stat"><strong>01</strong><span>Creative mindset</span></div>
                 <div class="stat"><strong>24/7</strong><span>Learning & improving</span></div>
