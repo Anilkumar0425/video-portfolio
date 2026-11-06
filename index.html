@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Anil Kumar — video editor creating cinematic stories, creative edits and short-form content.">
 <title>Anil Kumar | Video Editor</title>
+
 <style>
 :root{
     --bg:#080a08;
@@ -63,15 +64,16 @@ section{padding:82px 0}
 .project-info p{margin:6px 0 0;color:var(--muted);font-size:.84rem}
 .num{color:var(--lime);font-size:.8rem}
 
-/* Cover image with YouTube player */
+/* Cover images and responsive YouTube players */
 .video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
 .project-video{position:absolute;inset:0;width:100%;height:100%;display:block;border:0;background:#000}
 .video-cover{position:absolute;z-index:2;inset:0;width:100%;height:100%;padding:0;border:0;background:#111;cursor:pointer;overflow:hidden}
-.video-cover img{display:block;width:100%;height:100%;object-fit:cover}
+.video-cover[hidden]{display:none}
+.video-cover img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .video-cover:hover img{transform:scale(1.035)}
 .video-cover:focus-visible{outline:3px solid var(--lime);outline-offset:-5px}
 .play-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:54px;border-radius:14px;background:#080a08e8;border:2px solid var(--lime);color:var(--lime);display:grid;place-items:center;font-size:25px;padding-left:4px}
-.project-featured{grid-column:span 2}
+@media(min-width:761px){.project-featured{grid-column:span 2}}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
@@ -179,7 +181,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
         <article class="project">
             <div class="video-frame">
                 <button class="video-cover" type="button" aria-label="Play Cinematic Edit" data-video-url="https://www.youtube.com/embed/LU0VsrpO2-8?si=CPCczLBEs1pk2QiM&amp;autoplay=1">
-                    <img src="images/thumb1.png" alt="Cover image for Cinematic Edit">
+                    <img src="images/thumb1.png" alt="Cover image for Cinematic Edit" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/LU0VsrpO2-8/hqdefault.jpg'">
                     <span class="play-icon" aria-hidden="true">▶</span>
                 </button>
                 <iframe class="project-video" title="Cinematic Edit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -190,7 +192,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
         <article class="project">
             <div class="video-frame">
                 <button class="video-cover" type="button" aria-label="Play Creative Vision" data-video-url="https://www.youtube.com/embed/w65oWMrHxP4?si=2eiXGxvAgwu-wMQf&amp;autoplay=1">
-                    <img src="images/thumb2.png" alt="Cover image for Creative Vision">
+                    <img src="images/thumb2.png" alt="Cover image for Creative Vision" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/w65oWMrHxP4/hqdefault.jpg'">
                     <span class="play-icon" aria-hidden="true">▶</span>
                 </button>
                 <iframe class="project-video" title="Creative Vision" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -201,7 +203,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
         <article class="project">
             <div class="video-frame">
                 <button class="video-cover" type="button" aria-label="Play Short-form Stories" data-video-url="https://www.youtube.com/embed/x4fTbA9z5C0?si=-BPY2QGGzPeZnoBk&amp;autoplay=1">
-                    <img src="images/thumb3.png" alt="Cover image for Short-form Stories">
+                    <img src="images/thumb3.png" alt="Cover image for Short-form Stories" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/x4fTbA9z5C0/hqdefault.jpg'">
                     <span class="play-icon" aria-hidden="true">▶</span>
                 </button>
                 <iframe class="project-video" title="Short-form Stories" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -212,7 +214,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
         <article class="project">
             <div class="video-frame">
                 <button class="video-cover" type="button" aria-label="Play Beyond the Imagination" data-video-url="https://www.youtube.com/embed/L-w3xSoCy6s?si=UkNrdg83Rf73by5Q&amp;autoplay=1">
-                    <img src="images/thumb.png" alt="Cover image for Beyond the Imagination">
+                    <img src="images/thumb.png" alt="Cover image for Beyond the Imagination" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/L-w3xSoCy6s/hqdefault.jpg'">
                     <span class="play-icon" aria-hidden="true">▶</span>
                 </button>
                 <iframe class="project-video" title="Beyond the Imagination" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -223,7 +225,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
         <article class="project project-featured">
             <div class="video-frame">
                 <button class="video-cover" type="button" aria-label="Play Typography" data-video-url="https://www.youtube.com/embed/q5CwlsblrHg?si=KXtX4Kp5EvJ6mVih&amp;autoplay=1">
-                    <img src="images/thumb5.png" alt="Cover image for Typography">
+                    <img src="images/thumb5.png" alt="Cover image for Typography" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/q5CwlsblrHg/hqdefault.jpg'">
                     <span class="play-icon" aria-hidden="true">▶</span>
                 </button>
                 <iframe class="project-video" title="Typography" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -240,7 +242,7 @@ footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0;color:
             <h2>MADE WITH<br>INTENTION.<br><span style="color:var(--lime)">CUT WITH FEELING.</span></h2>
         </div>
         <div>
-            <p>I’m ANIL KUMAR BUDIGE, a video editor building my creative identity with one edit at a time. I enjoy finding the story inside the footage — then shaping it with timing, sound, color, and transitions.</p>
+            <p>I’m Anil Kumar, a video editor building my creative identity one project at a time. I enjoy finding the story inside the footage — then shaping it with timing, sound, color, and transitions.</p>
             <p>My current toolkit includes Adobe Premiere Pro and capcut mobile with a focus on cinematic edits, creative short-form content, and visual storytelling.</p>
             <div class="stat-row">
                 <div class="stat"><strong>01</strong><span>Creative mindset</span></div>
